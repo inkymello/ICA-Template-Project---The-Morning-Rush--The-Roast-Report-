@@ -1,0 +1,14 @@
+/* Team pages. Colours come from the shared theme (theme.css). */
+:root{ --bean:#181310; --bean-2:#211A16; --bean-3:#2B231D; --rule:#3A302A; --rule-2:#4C3F37;
+  --milk:#F3EAE0; --milk-dim:#B0A094; --milk-faint:#7C6D63; --crema:#E4A94D; --focus:#E4A94D; }
+body{ font-family:system-ui,sans-serif; color:var(--milk-dim); background:var(--bean); max-width:52rem; margin:0 auto; padding:1.5rem; line-height:1.6; }
+h1,h2{ color:var(--milk); }
+a{ color:var(--milk); text-decoration-color:var(--crema); text-underline-offset:3px; }
+:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+section,article{ background:var(--panel,var(--bean-2)); color:var(--panel-text,var(--milk)); padding:1rem 1.5rem; border-radius:.5rem; margin-bottom:1.5rem; border:1px solid var(--rule); }
+section h1,article h2,section p,article p,article li{ color:inherit; }
+section a,article a{ color:inherit; }
+nav li{ margin:.4rem 0; }
+.meta{ font-size:.9rem; }
+iframe{ width:100%; border:1px solid var(--rule); border-radius:.5rem; background:var(--bean); }
+footer{ font-size:.85rem; margin-top:2rem; color:var(--milk-faint); }

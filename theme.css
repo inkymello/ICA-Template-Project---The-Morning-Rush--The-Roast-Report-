@@ -1,0 +1,41 @@
+/* Shared theme: dark "roast" (default) and light "cream".
+   Loaded AFTER each page's own stylesheet so the light overrides win. */
+:root{
+  --toggle-bg:#2B231D; --toggle-ring:#4C3F37;
+  --bar-bg:rgba(24,19,16,.94); --grid:#261F1A;
+  --tip-bg:#0E0B09; --tip-shadow:0 10px 30px rgba(0,0,0,.6);
+  --water:#12212A; --land:#241D18; --land-stroke:#382E27;
+  --place:#5E6F79; --place-big:#6E818C; --place-water:#3F5B6B;
+  --furn:#4D5E68; --pin-bg:#14100D;
+  --panel:#211A16; --panel-text:#F3EAE0;
+  --select-arrow:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23B0A094' stroke-width='1.6'/></svg>");
+}
+:root[data-theme="dark"]{ color-scheme:dark; }
+:root[data-theme="light"]{
+  color-scheme:light;
+  --toggle-bg:#F2E6D0; --toggle-ring:#9A7A58;
+  --bean:#F6EEE2; --bean-2:#EFE3D1; --bean-3:#E9DAC4;
+  --rule:#D8C6AC; --rule-2:#C4AE90;
+  --milk:#2B1D11; --milk-dim:#5A4530; --milk-faint:#766148;
+  --crema:#E4A94D; --focus:#A8650F;
+  --bar-bg:rgba(246,238,226,.94); --grid:#E3D5BD;
+  --tip-bg:#FFFBF4; --tip-shadow:0 10px 30px rgba(43,29,17,.22);
+  --water:#CFE0E4; --land:#EADBC3; --land-stroke:#CDB794;
+  --place:#6B7C85; --place-big:#566A75; --place-water:#6F8F9E;
+  --furn:#6B7C85; --pin-bg:#FFFBF4;
+  --panel:#E4CDB0; --panel-text:#2B1D11;
+  --select-arrow:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%235A4530' stroke-width='1.6'/></svg>");
+}
+body, .bar, select, .chip, .tip, .mapbox{ transition:background-color .2s, color .2s, border-color .2s; }
+@media (prefers-reduced-motion:reduce){ body, .bar, select, .chip, .tip, .mapbox{ transition:none; } }
+
+/* Round theme button (drawn with D3 in theme.js) */
+.theme-toggle{
+  position:fixed; right:18px; bottom:18px; z-index:100;
+  width:58px; height:58px; padding:0; border:0; background:none; border-radius:50%;
+  cursor:pointer; filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
+}
+.theme-toggle svg{ display:block; overflow:visible; }
+.theme-toggle .tt-disc{ fill:var(--toggle-bg); stroke:var(--toggle-ring); stroke-width:1.5; transition:stroke-width .15s; }
+.theme-toggle:hover .tt-disc{ stroke-width:2.5; }
+.theme-toggle:focus-visible{ outline:2px solid var(--focus); outline-offset:3px; }
