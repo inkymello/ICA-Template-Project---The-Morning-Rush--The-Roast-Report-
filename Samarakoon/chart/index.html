@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the Queue Forms — The Roast Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../theme.css">
+<script src="../../theme.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">The Morning Rush · The Roast Report · January to June 2023</div>
+    <h1>When the queue forms.</h1>
+    <p class="standfirst">Transactions by day of week and hour, across the Astoria, Hell's Kitchen and
+      Lower Manhattan shops. Darker cells are quiet; the pale ones are the rush.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="field"><label for="f-store">Store</label><select id="f-store"></select></div>
+    <div class="field"><label for="f-cat">Category</label><select id="f-cat"></select></div>
+    <div class="field"><label for="f-month">Month</label><select id="f-month"></select></div>
+    <button class="ghost" id="reset" type="button">Clear</button>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <div class="shead">
+    <h2>Transactions by day and hour</h2>
+    <p>Hover to isolate an hour across the week, click to hold it there.</p>
+  </div>
+  <div class="scroller"><svg id="heat" role="img" aria-label="Heat map of transactions by day of week and hour of day"></svg></div>
+  <p class="note" id="heat-note">&nbsp;</p>
+</div></section>
+
+<footer><div class="wrap">
+  Built with <b>D3 v7</b>. Heat Map view from The Roast Report</div></footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="script.js"></script>
+</body>
+</html>

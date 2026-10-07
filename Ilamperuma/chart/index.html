@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the Money Lands — The Roast Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../theme.css">
+<script src="../../theme.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">The Morning Rush · The Roast Report · January to June 2023</div>
+    <h1>Where the money lands.</h1>
+    <p class="standfirst">Revenue across the Astoria, Hell's Kitchen and Lower Manhattan shops.
+      Circle area is proportional to revenue. Click a store on the map or in the ranking to
+      filter the page down to it, and click again to release.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="field"><label for="f-store">Store</label><select id="f-store"></select></div>
+    <div class="field"><label for="f-cat">Category</label><select id="f-cat"></select></div>
+    <div class="field"><label for="f-month">Month</label><select id="f-month"></select></div>
+    <button class="ghost" id="reset" type="button">Clear</button>
+  </div>
+</div>
+
+<div class="kpis" id="kpis">
+  <div class="kpi"><div class="k">Revenue shown</div><div class="v" id="k-rev">—</div><div class="s" id="k-rev-s">&nbsp;</div></div>
+  <div class="kpi"><div class="k">Spread, top to bottom</div><div class="v" id="m-spread">—</div><div class="s">&nbsp;</div></div>
+  <div class="kpi"><div class="k">Units per transaction</div><div class="v" id="m-upt">—</div><div class="s">&nbsp;</div></div>
+</div>
+
+<section><div class="wrap">
+  <div class="shead">
+    <h2>Store locations, sized by revenue</h2>
+    <p>Hover a bubble or a ranked store to highlight it; click to filter the whole page.</p>
+  </div>
+  <div class="mapgrid">
+    <div class="mapbox"><svg id="map" role="img" aria-label="Map of the three shop locations in New York City, sized by revenue"></svg></div>
+    <div>
+      <ul class="rank" id="rank"></ul>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Built with <b>D3 v7</b>. The basemap is simplified geometry drawn from an explicit Mercator
+  projection, not a tile service. Store Location view from The Roast Report.
+</div></footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="script.js"></script>
+</body>
+</html>

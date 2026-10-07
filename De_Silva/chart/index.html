@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much a Cup Is Worth — The Roast Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../theme.css">
+<script src="../../theme.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker">The Morning Rush · The Roast Report · January to June 2023</div>
+    <h1>How much a cup is worth.</h1>
+    <p class="standfirst">One point per store per trading day. Point size is the number of
+      transactions that day. Drag a box on the plot to zoom into it.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="field"><label for="f-store">Store</label><select id="f-store"></select></div>
+    <div class="field"><label for="f-cat">Category</label><select id="f-cat"></select></div>
+    <div class="field"><label for="f-month">Month</label><select id="f-month"></select></div>
+    <button class="ghost" id="reset" type="button">Clear</button>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <div class="shead">
+    <h2>Daily revenue vs. daily units sold</h2>
+    <p>Toggle a store chip to hide it. Store-days with zero units are excluded.</p>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="scgrid">
+    <div><svg id="scatter" role="img" aria-label="Scatter plot of daily revenue against daily units sold"></svg></div>
+    <div>
+      <div class="eq" id="eq">—</div>
+      <div class="stat"><span>R²</span><b id="s-r2">—</b></div>
+      <div class="stat"><span>Correlation</span><b id="s-r">—</b></div>
+      <div class="stat"><span>Revenue per extra unit</span><b id="s-slope">—</b></div>
+      <div class="stat"><span>Store-days plotted</span><b id="s-n">—</b></div>
+      <button class="ghost" id="zoomout" style="margin-top:16px" hidden>Reset zoom</button>
+      <div style="margin-top:22px">
+        <div class="k" style="font-size:11px;color:var(--milk-faint);letter-spacing:.09em;text-transform:uppercase">Transactions per day</div>
+        <svg id="sizekey" class="sizekey" width="230" height="70"></svg>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Built with <b>D3 v7</b>. Scatter Plot view from The Roast Report — this one relates daily
+  revenue to daily units sold</div></footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="script.js"></script>
+</body>
+</html>

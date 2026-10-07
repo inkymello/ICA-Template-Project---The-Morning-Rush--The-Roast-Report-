@@ -1,0 +1,85 @@
+/* ──────────────────────────────────────────────────────────────
+   Palette: a roast chart. Background is dark-roast bean.
+   ────────────────────────────────────────────────────────────── */
+:root{
+  --bean:#181310; --bean-2:#211A16; --bean-3:#2B231D;
+  --rule:#3A302A; --rule-2:#4C3F37;
+  --milk:#F3EAE0; --milk-dim:#B0A094; --milk-faint:#7C6D63;
+  --crema:#E4A94D; --hibiscus:#E0705F; --matcha:#58B09C; --focus:#E4A94D;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important; animation:none!important} }
+body{
+  margin:0; background:var(--bean); color:var(--milk);
+  font-family:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15.5px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:1160px; margin:0 auto; padding:0 26px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif; font-weight:700; letter-spacing:-.01em; margin:0}
+:focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:3px}
+
+.masthead{padding:46px 0 26px}
+.kicker{font-size:12.5px; color:var(--milk-faint); letter-spacing:.14em; text-transform:uppercase}
+h1{font-size:clamp(34px,5.2vw,58px); line-height:1.02; margin:12px 0 14px; max-width:16ch}
+.standfirst{color:var(--milk-dim); max-width:62ch; font-size:16.5px}
+
+.bar{
+  position:sticky; top:0; z-index:30; background:var(--bar-bg,rgba(24,19,16,.94));
+  backdrop-filter:blur(9px); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+}
+.bar .wrap{display:flex; gap:18px; align-items:flex-end; flex-wrap:wrap; padding-top:13px; padding-bottom:13px}
+.field{display:flex; flex-direction:column; gap:4px}
+.field label{font-size:11px; color:var(--milk-faint); letter-spacing:.09em; text-transform:uppercase}
+select{
+  font:inherit; font-size:14px; color:var(--milk); background:var(--bean-3);
+  border:1px solid var(--rule-2); border-radius:5px; padding:7px 30px 7px 11px;
+  appearance:none; cursor:pointer; min-width:168px;
+  background-image:var(--select-arrow,url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23B0A094' stroke-width='1.6'/></svg>"));
+  background-repeat:no-repeat; background-position:right 10px center; background-size:11px;
+}
+select:hover{border-color:var(--milk-faint)}
+button.ghost{
+  font:inherit; font-size:13.5px; color:var(--milk-dim); background:none;
+  border:1px solid var(--rule-2); border-radius:5px; padding:8px 13px; cursor:pointer;
+}
+button.ghost:hover{color:var(--milk); border-color:var(--milk-faint)}
+
+section{padding:60px 0}
+.shead{display:flex; gap:28px; align-items:baseline; flex-wrap:wrap; margin-bottom:24px}
+.shead h2{font-size:clamp(23px,2.7vw,31px)}
+.shead p{color:var(--milk-dim); margin:0; max-width:52ch; font-size:14.5px; flex:1; min-width:280px}
+.note{font-size:12.5px; color:var(--milk-faint); margin-top:14px}
+
+svg{display:block; overflow:visible}
+.scroller{overflow-x:auto; padding-bottom:6px}
+.scroller::-webkit-scrollbar{height:8px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule-2); border-radius:4px}
+
+.hm-label{font-size:12.5px; fill:var(--milk-dim); font-weight:500}
+.hm-day{font-size:13.5px; fill:var(--milk); font-weight:600; font-family:Fraunces,Georgia,serif}
+.hm-val{font-size:11.5px; font-weight:600; pointer-events:none}
+.cell{stroke:var(--bean); stroke-width:2; cursor:pointer}
+.cell.dim{opacity:.22}
+.xhair{fill:none; stroke:var(--milk); stroke-width:2; pointer-events:none}
+.lg-tick{font-size:11px; fill:var(--milk-faint)}
+.lg-title{font-size:11px; fill:var(--milk-faint); letter-spacing:.09em}
+
+.tip{position:fixed; pointer-events:none; opacity:0; transition:opacity .12s; z-index:60;
+  background:var(--tip-bg,#0E0B09); border:1px solid var(--rule-2); border-radius:7px; padding:11px 13px;
+  font-size:12.5px; line-height:1.55; box-shadow:var(--tip-shadow,0 10px 30px rgba(0,0,0,.6)); max-width:250px}
+.tip .t{font-weight:600; margin-bottom:2px}
+.tip .n{font-family:Fraunces,Georgia,serif; font-size:21px; line-height:1.25}
+.tip .m{color:var(--milk-dim)}
+footer{padding:44px 0 60px; color:var(--milk-faint); font-size:13px}
+footer b{color:var(--milk-dim); font-weight:600}
+
+@media (max-width:640px){
+  .wrap{ padding:0 16px }
+  .masthead{ padding:32px 0 20px }
+  h1{ max-width:100% }
+  .bar .wrap{ gap:12px }
+  select{ min-width:130px }
+  section{ padding:40px 0 }
+}
